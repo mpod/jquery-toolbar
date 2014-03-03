@@ -1,4 +1,6 @@
-// Author: Matija Podravec, 2014
+// jquery-toolbar 1.0
+// 2014, Matija Podravec
+// Licensed under the MIT (https://raw.github.com/mpod/jquery-toolbar/master/LICENSE) license.
 
 (function($) {
   var cnt = 0;
