@@ -1,6 +1,8 @@
 #jquery-toolbar
 This is a SVG based jQuery toolbar widget. No CSS is used here!!!
 
+<img src="https://raw.github.com/mpod/jquery-toolbar/master/demo.png"/>
+
 ##Options
 * paperWidth: width of the toolbar in px (default: 500),
 * paperHeight: height of the toolbar in px (default: 40),
@@ -21,19 +23,19 @@ object,
 * submenu: array of submenu items, or string value 'color' which causes a color
 picker submenu to be generated.
 * propagateClickFromSubmenu: click events on submenu items are propagated 
-to this parent item. Second parameter of event handler function is submenu item 
-on which click event was triggered.
-* copyIconFromSubmenu: automatically takes over a icon from first selected item 
-in submenu. 
+to this parent item. Second parameter of event handler function in this case is 
+a submenu item on which click event is triggered.
+* copyIconFromSubmenu: automatically clone a icon from first selected item 
+in submenu. Icon is changed in case of click event on submenu item.
 * selected: item is selected,
-* selectable: item can be selected. Items with group property set are 
+* selectable: item can be selected. Items that belong to group are 
 automatically selectable.
-* data: container of user-defined data.
+* data: container for user-defined data.
 
 ###Special menu items
-* br: 
-* col:
-* sep:
+* br: defines end of current row,
+* col: defines end of current column. It can be only used in top toolbar menu,
+* sep: draws separator line between two buttons in a row.
 
 ##Methods
 * getItem(id): gets the item object with specified id.
