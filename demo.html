@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>Toolbar demo</title>
+    <script src="lib/jquery-1.11.0.min.js"></script>
+    <script src="lib/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="lib/raphael-min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="js/jquery.toolbar.js"></script>
+  </head>
+  <body>
+    <div id="toolbar"></div> 
+    <p id="log"></p>
+
+    <script>
+    var clickHandler = function(item, submenuItem) {
+      var text;
+      if (_.isString(item.icon))
+        text = item.icon;
+      else
+        text = item.data;
+      text = text.replace('icons/', '').replace('.svg', ''); 
+      $('#log').prepend('<div>Selected: ' + text + '</div>');
+    };
+    $(document).ready(function () {
+      $('#toolbar').toolbar({
+        paperWidth: 500,
+        paperHeight: 76,
+        menu: [{
+          icon: 'icons/bubble.svg',
+          group: 'g1',
+          click: clickHandler,
+          selected: true
+        }, {
+          icon: 'icons/checkmark.svg',
+          click: clickHandler,
+          group: 'g1'
+        }, 'br', {
+          icon: 'icons/checkround.svg',
+          click: clickHandler,
+          group: 'g1'
+        }, {
+          icon: 'icons/lock.svg',
+          click: clickHandler,
+          group: 'g1'
+        }, 'col', {
+          copyIconFromSubmenu: true,
+          propagateClickFromSubmenu: true,
+          click: function(item, submenuItem) {
+            $('#log').prepend('<div>Selected: ' + 
+              submenuItem.icon.replace('icons/', '').replace('.svg', '') + '</div>');
+          },
+          width: 68,
+          height: 68,
+          submenu: [{
+            icon: 'icons/mail.svg',
+            group: 'g2',
+            selected: true
+          }, {
+            icon: 'icons/time.svg',
+            group: 'g2'
+          }, 'br', {
+            icon: 'icons/man.svg',
+            group: 'g2'
+          }, {
+            icon: 'icons/volume.svg',
+            group: 'g2'
+          }]
+        }, 'col', {
+          icon: 'icons/cmd.svg',
+          click: clickHandler
+        }, {
+          icon: function(paper, item) {
+            var r = paper.rect(6, 6, 20, 20);
+            r.attr({fill: item.data});
+            return r;
+          },
+          data: '#ffff00',
+          propagateClickFromSubmenu: true,
+          click: function(item) {
+            _.each(item.submenu.items, function(i) {
+              if (i.selected) {
+                item.data = i.data;
+              }
+            });
+            $('#log').prepend('<div>Selected color: ' + item.data + '</div>');
+          },
+          submenu: 'color'
+        }, 'sep', {
+          icon: function(paper, item) {
+            var icons = ['icons/heart.svg', 'icons/eye.svg', 'icons/photo.svg', 'icons/settings.svg'];
+            item.data = _.sample(icons);
+            return paper.image(item.data, 6, 6, 20, 20);
+          },
+          click: clickHandler
+        }]
+      });
+    });
+    </script>
+  </body>
+</html>
+
