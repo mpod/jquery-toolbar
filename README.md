@@ -2,7 +2,6 @@
 This is a SVG based jQuery toolbar widget. No CSS is used here!!!
 
 <img src="https://raw.github.com/mpod/jquery-toolbar/master/demo1.png"/>
-<img src="https://raw.github.com/mpod/jquery-toolbar/master/demo2.png"/>
 <img src="https://raw.github.com/mpod/jquery-toolbar/master/demo3.png"/>
 
 ##Options
