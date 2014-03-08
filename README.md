@@ -36,7 +36,7 @@ automatically selectable.
 
 ###Special menu item strings
 * br: defines end of current row,
-* col: defines end of current column. It can be only used in top toolbar menu,
+* col: defines end of current column. It can be only used in top toolbar menu.
 * sep: draws separator line between two buttons in a row.
 
 ##Methods
