@@ -1,11 +1,11 @@
 {
 "name": "jquery-toolbar",
 "title": "jQuery Toolbar",
-"description": "SVG based jQuery toolbar widgeta.",
+"description": "SVG based jQuery toolbar widget.",
 "keywords": [
 "toolbar"
 ],
-"version": "1.0.4",
+"version": "1.0.5",
 "author": {"name": "Matija Podravec"},
 "licenses": [
 {
