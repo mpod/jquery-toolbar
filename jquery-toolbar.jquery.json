@@ -5,8 +5,8 @@
 "keywords": [
 "toolbar"
 ],
-"version": "1.0.3",
-"author": "Matija Podravec",
+"version": "1.0.4",
+"author": {"name": "Matija Podravec"},
 "licenses": [
 {
 "type": "MIT",
